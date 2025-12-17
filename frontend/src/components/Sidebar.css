@@ -1,0 +1,93 @@
+.sidebar {
+  position: fixed;
+  top: 68px; /* navbar height */
+  left: 0;
+  height: calc(100vh - 68px);
+
+  width: 240px;
+  min-height: calc(100vh - 68px);
+  margin: 0;
+  padding: 16px 14px 20px;
+
+  border-radius: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 18, 0.92),
+    rgba(8, 8, 8, 0.92)
+  );
+
+  backdrop-filter: blur(18px);
+  box-shadow: 8px 0 24px rgba(0, 0, 0, 0.85),
+    inset -1px 0 0 rgba(245, 215, 110, 0.06);
+}
+
+/* ========== NAV STACK ========== */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* consistent rhythm */
+}
+
+/* ========== LINK BASE ========== */
+.side-link {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  color: rgba(255, 255, 255, 0.68);
+  text-decoration: none;
+
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* ICON NORMALIZATION */
+.side-link svg {
+  width: 18px;
+  height: 18px;
+  justify-self: center;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* HOVER */
+.side-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.side-link:hover svg {
+  color: #ffffff;
+}
+
+/* ACTIVE STATE */
+.side-link.active {
+  background: rgba(245, 215, 110, 0.12);
+  color: #f5d76e;
+  font-weight: 600;
+}
+
+.side-link.active svg {
+  color: #f5d76e;
+}
+
+/* OPTIONAL: LEFT GOLD INDICATOR (very premium) */
+.side-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 60%;
+  width: 3px;
+
+  background: linear-gradient(180deg, #f5d76e, rgba(245, 215, 110, 0.4));
+
+  border-radius: 2px;
+}

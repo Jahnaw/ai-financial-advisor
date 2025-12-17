@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import "./Navbar.css";
 
 export default function Navbar() {
   const { user, logout } = useContext(AuthContext);
@@ -11,25 +12,34 @@ export default function Navbar() {
     nav("/");
   };
 
+  const userInitial = user?.name?.charAt(0).toUpperCase();
+
   return (
     <header className="nav">
+      {/* LEFT: LOGO */}
       <div className="nav-left">
-        <Link to="/home" className="brand">FinGold</Link>
+        <Link to="/home" className="fingold-logo nav-brand">
+          FinGold
+        </Link>
       </div>
+
+      {/* CENTER: NAV LINKS */}
+      <div className="nav-center">
+        <Link to="/dashboard" className="nav-link">Dashboard</Link>
+        <Link to="/ai-advisor" className="nav-link">AI Advisor</Link>
+        <Link to="/investments" className="nav-link">Investments</Link>
+      </div>
+
+      {/* RIGHT: ACTIONS */}
       <div className="nav-right">
-        {user ? (
-          <>
-            <span className="nav-user">Hi, {user.name}</span>
-            <Link to="/dashboard" className="btn-link">Dashboard</Link>
-            <Link to="/ai-advisor" className="btn-link">AI Advisor</Link>
-            <Link to="/investments" className="btn-link">Investments</Link>
-            <button onClick={onLogout} className="btn-ghost">Logout</button>
-          </>
-        ) : (
-          <>
-            <Link to="/login" className="btn-link">Login</Link>
-            <Link to="/signup" className="btn-cta">Get Started</Link>
-          </>
+        <button onClick={onLogout} className="nav-logout">
+          Logout
+        </button>
+
+        {user && (
+          <div className="nav-avatar">
+            {userInitial}
+          </div>
         )}
       </div>
     </header>

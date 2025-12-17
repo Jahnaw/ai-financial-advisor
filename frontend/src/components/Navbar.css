@@ -1,0 +1,117 @@
+/* ========== NAVBAR WRAPPER ========== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  height: 68px;                /* ⬅️ key fix: more breathing room */
+  padding: 0 36px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(18, 18, 18, 0.92),
+    rgba(8, 8, 8, 0.92)
+  );
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.9);
+}
+
+
+/* ========== LEFT ========== */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand {
+  text-decoration: none;
+  transform: translateY(1px);
+}
+
+/* ========== CENTER NAV ========== */
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+.nav-link {
+  position: relative;
+
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14.5px;          /* slightly stronger */
+  font-weight: 600;           /* bolder, more confident */
+
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+
+  padding: 6px 4px;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+/* Hover = premium gold glow */
+.nav-link:hover {
+  color: #f5d76e;
+  text-shadow:
+    0 0 6px rgba(245, 215, 110, 0.45),
+    0 0 14px rgba(245, 215, 110, 0.25);
+}
+
+
+/* ========== RIGHT ACTIONS ========== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* LOGOUT BUTTON */
+.nav-logout {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+
+  color: rgba(245, 215, 110, 0.85);
+
+  background: rgba(245, 215, 110, 0.06);
+  border: 1px solid rgba(245, 215, 110, 0.22);
+  border-radius: 999px;
+
+  padding: 7px 14px;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.nav-logout:hover {
+  background: rgba(245, 215, 110, 0.12);
+}
+
+/* USER AVATAR */
+.nav-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #000;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.45);
+
+  user-select: none;
+}
