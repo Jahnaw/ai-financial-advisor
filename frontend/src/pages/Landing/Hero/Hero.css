@@ -1,0 +1,362 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap");
+
+/* ================= HEADER ================= */
+.landing-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0.85),
+    rgba(10, 10, 10, 0.75)
+  );
+
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.6),
+    inset 0 -1px 0 rgba(255, 215, 110, 0.12);
+
+  transition: transform 0.35s ease;
+}
+
+
+.landing-header.sticky {
+  position: fixed;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.96),
+    rgba(15, 15, 15, 0.9)
+  );
+}
+
+.landing-header.hide {
+  transform: translateY(-100%);
+}
+
+.landing-header-inner {
+  height: 72px;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.brand-name {
+
+ 
+  font-family: "Clash Display", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+
+  background: linear-gradient(
+    120deg,
+    #fff1a8 0%,     
+    #f5d76e 25%,    
+    #e8c45a 50%,
+    #ffeaa7 72%,    
+    #f5d76e 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+    text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.6),
+    0 6px 18px rgba(212, 175, 55, 0.35);
+
+
+  cursor: pointer;
+   user-select: none;
+}
+.brand-name::after {
+  content: "";
+  display: block;
+
+  width: 38%;
+  height: 2px;
+  margin-top: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #f5d76e,
+    rgba(245, 215, 110, 0.15)
+  );
+
+  border-radius: 2px;
+}
+
+
+
+/* Menu */
+.desktop-menu ul {
+  display: flex;
+  gap: 42px;
+  list-style: none;
+}
+
+.desktop-menu a {
+  font-family: Inter, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  position: relative;
+}
+
+.desktop-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #44433d, #f3f399);
+  transition: width 0.3s ease;
+}
+
+
+
+.desktop-menu a:hover::after {
+  width: 100%;
+}
+.desktop-menu a {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.desktop-menu a:hover {
+  color: #f5d76e;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+/* RESET DEFAULT BUTTON BEHAVIOR */
+.auth-buttons button {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+  font-family: Inter, system-ui, sans-serif;
+  box-sizing: border-box; /* 🔥 IMPORTANT */
+}
+
+.btn-login {
+  padding: 9px 22px;
+  border-radius: 999px;
+
+  border: 1.5px solid rgba(202, 189, 189, 0.199); /* 🔥 edge clarity */
+  color: #f5d76e;
+   box-shadow:
+    inset 0 0 0 1px rgba(245, 215, 110, 0.5),
+     0 0 18px rgb(67, 61, 41);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  background: rgba(0, 0, 0, 0.35);
+
+ 
+
+  transition: all 0.25s ease;
+}
+
+.btn-login:hover {
+  background: rgba(245, 215, 110, 0.12);
+  box-shadow:
+    inset 0 0 0 1px rgba(245, 215, 110, 0.55),
+    0 0 18px rgba(245, 215, 110, 0.35);
+}
+
+
+.btn-signup {
+  padding: 9px 24px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #e3b10c,
+    #f5d76e
+  );
+
+  color: #e1b872;
+  font-size: 14px;
+  font-weight: 700;
+
+  border: 1.5px solid rgba(59, 50, 12, 0.952); /* 🔥 edge clarity */
+
+   box-shadow:
+    inset 0 0 0 1px rgba(245, 215, 110, 0.5),
+    0 0 18px rgb(67, 61, 41);
+}
+
+.btn-signup:hover {
+  background: rgba(245, 215, 110, 0.12);
+  box-shadow:
+    inset 0 0 0 1px rgba(245, 215, 110, 0.5),
+    0 0 18px rgba(245, 215, 110, 0.35);
+}
+
+
+
+/* ================= HERO ================= */
+/* ================= WRAPPER ================= */
+.hero-wrapper {
+  position: relative;
+  background: #0a0a0a;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BACKGROUND IMAGE */
+.hero-bg-image {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
+
+  background-image: url("/bg-image.jpg");
+  background-size: cover;
+  background-position: center;
+
+  z-index: 2;
+}
+
+
+/* OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(245,215,110,0.12),
+      transparent 55%
+    ),
+    linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.85)
+    );
+  z-index: -1;
+}
+
+/* CENTERED CONTAINER */
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* GLASS CARD */
+.hero-glass-card {
+  max-width: 680px;
+  padding: 44px 46px;
+  border-radius: 26px;
+
+  background: linear-gradient(
+    180deg,
+    #060606b8,
+    rgba(80, 72, 43, 0.72)
+  );
+
+  backdrop-filter: blur(2px);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.85),
+    inset 0 0 0 1px rgba(245,215,110,0.15);
+
+  text-align: center;
+}
+
+/* TAG */
+.hero-tag {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: rgba(202, 173, 71, 0.14);
+  color: hsl(47, 100%, 53%);
+  font-size: 13px;
+  letter-spacing: 2.4px;
+  font-weight: 600;
+}
+
+/* TITLE */
+.hero-title {
+  font-family: "Clash Display", sans-serif;
+  font-size: 58px;
+  line-height: 1.05;
+  color: #e1e0e0dd;
+}
+
+.hero-title span {
+  background: linear-gradient(120deg, #fff1a8, #dfcd06, #e8c45a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* DESC */
+.hero-desc {
+  margin-top: 18px;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: #ffffffbe;
+}
+
+/* ACTIONS */
+.hero-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.btn-primary {
+  padding: 14px 36px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000000;
+  font-weight: 700;
+}
+
+.btn-secondary {
+  padding: 14px 36px;
+  border-radius: 999px;
+  border: 2px solid #dcdad1;
+  color: #f5d76e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

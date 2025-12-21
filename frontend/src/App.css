@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+/* ===== GLOBAL RESET FOR FULL WIDTH ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix for any container issues */
+.container, .wrapper, .app {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}

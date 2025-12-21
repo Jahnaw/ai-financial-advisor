@@ -1,0 +1,80 @@
+.process {
+  padding: 110px 6%;
+  background: #ffffff;
+}
+
+.process-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 80px;
+}
+
+.process-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.process-header p {
+  margin-top: 16px;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.process-step {
+  text-align: center;
+  padding: 32px 24px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.process-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.step-visual {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.step-number {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4f46e5;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+}
+
+.step-visual img {
+  width: 72px;
+  height: 72px;
+  margin-top: 18px;
+}
+
+.process-step h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.process-step p {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+}

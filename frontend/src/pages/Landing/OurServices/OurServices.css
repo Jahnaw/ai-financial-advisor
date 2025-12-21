@@ -1,0 +1,22 @@
+.our-services {
+  padding: 100px 6%;
+  text-align: center;
+}
+
+.our-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.our-card {
+  padding: 32px;
+  border-radius: 16px;
+  background: #f9fafb;
+  transition: 0.3s;
+}
+
+.our-card:hover {
+  transform: translateY(-6px);
+}

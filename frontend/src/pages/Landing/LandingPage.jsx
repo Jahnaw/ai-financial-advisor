@@ -1,32 +1,70 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function LandingPage(){
+
+
+
+
+
+import { AuthContext } from "../../context/AuthContext";
+import "./LandingPage.css";
+
+// landing sub-components
+import Hero from "./Hero/Hero";
+import Brands from "./Brands/Brands";
+import Content from "./Content/Content";
+import Services from "./Services/Services";
+import OurServices from "./OurServices/OurServices";
+import Counter from "./Counter/Counter";
+import Newsletter from "./Newsletter/Newsletter";
+import Footer from "./Footer/Footer";
+
+
+const LandingPage = () => {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // if (user) navigate("/dashboard"); // enable later if needed
+  }, [user, navigate]);
+
   return (
-    <div className="landing">
-      <div className="hero">
-        <h1>FinGold — Personal AI Financial Advisor</h1>
-        <p>Smart budgeting, goal planning and AI-driven advice — tailored for you.</p>
-        <div className="hero-actions">
-          <Link to="/signup" className="btn-cta">Get Started</Link>
-          <Link to="/login" className="btn-link">Login</Link>
-        </div>
-      </div>
+    <div className="landing-page">
+  
 
-      <section className="features">
-        <div className="feature-card">
-          <h3>Track Expenses</h3>
-          <p>Log spending and track where your money goes.</p>
-        </div>
-        <div className="feature-card">
-          <h3>Set Goals</h3>
-          <p>Create saving goals and track progress visually.</p>
-        </div>
-        <div className="feature-card">
-          <h3>AI Advice</h3>
-          <p>Get personalized financial advice (coming soon).</p>
-        </div>
-      </section>
+      <main>
+        <section className="section hero-section">
+          <Hero />
+        </section>
+
+        <section className="section">
+          <Brands />
+        </section>
+
+        <section className="section light-bg">
+          <Content />
+        </section>
+
+        <section className="section">
+          <Services />
+        </section>
+
+        <section className="section light-bg">
+          <OurServices />
+        </section>
+
+        <section className="section">
+          <Counter />
+        </section>
+
+        <section className="section light-bg">
+          <Newsletter />
+        </section>
+      </main>
+
+      <Footer />
     </div>
   );
-}
+};
+
+export default LandingPage;

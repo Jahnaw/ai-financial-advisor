@@ -1,0 +1,23 @@
+.brands {
+  padding: 60px 6%;
+  text-align: center;
+  background: #ffffff;
+}
+
+.brands p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+.brands-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.brands-row img {
+  height: 28px;
+  opacity: 0.7;
+}
