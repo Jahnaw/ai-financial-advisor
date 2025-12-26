@@ -4,7 +4,12 @@ import { AuthContext } from "../context/AuthContext";
 
 export default function ProtectedRoute() {
   const { user, loading } = useContext(AuthContext);
-  if (loading) return <div className="center"><div className="loader" /></div>;
+  if (loading)
+    return (
+      <div className="center">
+        <div className="loader" />
+      </div>
+    );
   if (!user) return <Navigate to="/login" replace />;
   return <Outlet />;
 }

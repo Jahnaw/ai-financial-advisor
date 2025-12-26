@@ -1,20 +1,24 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import "./Hero.css";
 
 const Hero = () => {
-  const { user } = useContext(AuthContext);
+ const [user, setUser] = useState(null);
+const [authLoading, setAuthLoading] = useState(true);
+
+  
   const navigate = useNavigate();
 
   const lastScrollY = useRef(0);
   const [hideHeader, setHideHeader] = useState(false);
 
+  // 🔥 PROPAGATION MODEL (ANCHORS)
   const menuItems = [
-    { text: "Home", url: "/" },
-    { text: "About", url: "/about" },
-    { text: "Pricing", url: "/pricing" },
-    { text: "Blog", url: "/blog" },
+    { text: "Home", url: "#home" },
+    { text: "About", url: "#about" },
+    { text: "Services", url: "#services" },
+    { text: "Contact us", url: "#contact" },
   ];
 
   useEffect(() => {
@@ -33,11 +37,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="hero-wrapper">
+    <section className="hero-wrapper" id="home">
       {/* ================= HEADER ================= */}
       <header className={`landing-header ${hideHeader ? "hide" : ""}`}>
         <div className="landing-header-inner">
-          <div className="brand-name" onClick={() => navigate("/")}>
+          <div className="brand-name" onClick={() => window.scrollTo(0, 0)}>
             FinGold
           </div>
 
@@ -45,7 +49,8 @@ const Hero = () => {
             <ul>
               {menuItems.map((item, i) => (
                 <li key={i}>
-                  <NavLink to={item.url}>{item.text}</NavLink>
+                  {/* 🔥 USE <a> NOT NavLink */}
+                  <a href={item.url}>{item.text}</a>
                 </li>
               ))}
             </ul>
@@ -54,10 +59,10 @@ const Hero = () => {
           {!user && (
             <div className="auth-buttons">
               <button className="btn-login" onClick={() => navigate("/login")}>
-                Login
+               ➜] Login
               </button>
               <button className="btn-signup" onClick={() => navigate("/signup")}>
-                Sign Up
+              👤 Sign Up
               </button>
             </div>
           )}
@@ -65,15 +70,14 @@ const Hero = () => {
       </header>
 
       {/* ================= HERO ================= */}
-      
       <div className="hero">
-        {/* BACKGROUND IMAGE */}
+        {/* BACKGROUND */}
         <div className="hero-bg-image"></div>
         <div className="hero-overlay"></div>
 
-        {/* CENTERED CONTENT */}
+        {/* CONTENT */}
         <div className="hero-container">
-          <div className="hero-glass-card">
+          <div className="hero-glass-card hero-enter">
             <span className="hero-tag">AI-POWERED FINANCE</span>
 
             <h1 className="hero-title">
@@ -83,13 +87,25 @@ const Hero = () => {
             </h1>
 
             <p className="hero-desc">
-              Track expenses, analyse spending patterns, and get intelligent
-              insights to grow your wealth — all in one secure platform.
+              Track expenses, analyse spending patterns, and receive intelligent
+              insights that help you grow wealth — clearly, securely, and
+              confidently.
             </p>
 
             <div className="hero-actions">
-              <button className="btn-primary">Get Started</button>
-              <button className="btn-secondary">How It Works</button>
+              <button className="btn-primary" onClick={() => navigate("/signup")}>
+               ▶︎ Get Started
+              </button>
+              <button
+                className="btn-secondary"
+                onClick={() =>
+                  document
+                    .getElementById("services")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+               ⚙️ How It Works
+              </button>
             </div>
           </div>
         </div>

@@ -1,32 +1,206 @@
-.content {
-  padding: 100px 6%;
+@import url("https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap");
+
+/* ================= SECTION ================= */
+.content-section {
+  position: relative;
+  padding: 160px 6%;
+  background: #0a0a0a;
+  overflow: hidden;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 64px;
 }
 
-.content-text {
-  max-width: 520px;
+/* GOLD DIVIDER */
+.content-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1.5px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(245, 215, 110, 0.9),
+    transparent
+  );
+  box-shadow:
+    0 0 12px rgba(245, 215, 110, 0.6),
+    0 0 24px rgba(245, 215, 110, 0.35);
+  z-index: 4;
 }
 
-.content-text h2 {
-  font-size: 36px;
-  margin-bottom: 16px;
+/* TOP FADE */
+.content-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, #000, transparent);
+  z-index: 3;
 }
 
-.content-text p {
+/* BACKGROUND */
+.content-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/content.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+.content-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(245, 215, 110, 0.12),
+      transparent 55%
+    ),
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.9)
+    );
+  z-index: 1;
+}
+
+/* GLASS CONTAINER */
+.content-glass {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  padding: 64px 56px;
+  border-radius: 32px;
+  text-align: center;
+
+  background: linear-gradient(
+    rgba(40, 40, 40, 0.75),
+    /* rgba(10, 10, 10, 0.9) */
+  );
+
+  backdrop-filter: blur(2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(245, 215, 110, 0.18),
+    0 40px 80px rgba(0, 0, 0, 0.85);
+}
+
+/* TITLE */
+.content-glass h2 {
+  font-family: "Clash Display", sans-serif;
+  font-size: 42px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.content-glass h2 span {
+  color: #f5d76e;
+}
+
+/* DESC */
+.content-desc {
   font-size: 17px;
-  color: #6b7280;
+  line-height: 1.7;
+  color: #cccccc;
+  max-width: 760px;
+  margin: 0 auto 56px;
 }
 
-.content img {
-  width: 420px;
-  border-radius: 16px;
+/* POINTS GRID */
+.content-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  perspective: 1200px;
 }
 
+/* CARD */
+.content-point {
+  position: relative;
+  height: 260px;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  transform: translateZ(0) scale(1);
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* CARD OVERLAY */
+.content-point-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.85)
+  );
+}
+
+/* TEXT */
+.content-point-text {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.content-point-text h4 {
+  font-size: 20px;
+  color: #f5d76e;
+  margin-bottom: 6px;
+  transition: transform 0.35s ease;
+}
+
+.content-point-text p {
+  font-size: 14px;
+  color: #dddddd;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.35s ease;
+}
+
+/* HOVER */
+.content-point:hover {
+  transform: translateY(-10px) scale(1.06);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.85),
+    0 0 30px rgba(245, 215, 110, 0.35);
+}
+
+.content-point:hover h4 {
+  transform: translateY(-4px);
+}
+
+.content-point:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .content {
-    flex-direction: column;
-    text-align: center;
+  .content-points {
+    grid-template-columns: 1fr;
+  }
+
+  .content-point {
+    height: 240px;
+  }
+
+  .content-glass {
+    padding: 48px 32px;
   }
 }

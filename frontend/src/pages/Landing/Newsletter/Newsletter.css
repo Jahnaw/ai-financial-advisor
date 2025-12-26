@@ -1,58 +1,192 @@
-.newsletter {
-  padding: 120px 6%;
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
+@import url("https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap");
+
+/* ================= SECTION ================= */
+.newsletter-section {
+  position: relative;
+  padding: 160px 6% 180px;
+  background: #0a0a0a;
   display: flex;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
+/* TOP FADE (BLEND WITH PREVIOUS SECTION) */
+.newsletter-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, #000, transparent);
+  z-index: 1;
+}
+/* GOLD LINE — UPPER BORDER (NEWSLETTER) */
+.newsletter-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 60%;
+  height: 1.5px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(245, 215, 110, 0.9),
+    transparent
+  );
+
+  box-shadow:
+    0 0 8px rgba(245, 215, 110, 0.45),
+    0 0 18px rgba(245, 215, 110, 0.25);
+
+  z-index: 2;
+}
+
+
+/* BACKGROUND IMAGE */
+.newsletter-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/newss.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+/* OVERLAY */
+.newsletter-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(245, 215, 110, 0.12),
+      transparent 55%
+    ),
+    linear-gradient(
+      rgba(0, 0, 0, 0.78),
+      rgba(0, 0, 0, 0.92)
+    );
+  z-index: 1;
+}
+
+/* GLASS BOX */
 .newsletter-box {
-  background: #ffffff;
+  position: relative;
+  z-index: 2;
+
   max-width: 640px;
   width: 100%;
-  padding: 56px 40px;
-  border-radius: 20px;
+  padding: 60px 46px;
+  border-radius: 28px;
   text-align: center;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+
+  background: linear-gradient(
+    rgba(35, 35, 35, 0.75),
+    rgba(10, 10, 10, 0.75)
+  );
+  backdrop-filter: blur(22px);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(245, 215, 110, 0.18),
+    0 40px 80px rgba(0, 0, 0, 0.85);
 }
 
+/* TITLE */
 .newsletter-box h2 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #111827;
+  font-family: "Clash Display", sans-serif;
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 14px;
 }
 
+.newsletter-box h2 span {
+  color: #f5d76e;
+}
+
+/* TEXT */
 .newsletter-box p {
-  margin-top: 12px;
-  font-size: 16px;
-  color: #6b7280;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #cccccc;
+  margin-bottom: 34px;
 }
 
+/* FORM */
 .newsletter-form {
-  margin-top: 32px;
   display: flex;
-  gap: 12px;
+  gap: 14px;
 }
 
 .newsletter-form input {
   flex: 1;
-  padding: 14px 16px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  background: rgba(20, 20, 20, 0.9);
+  color: #ffffff;
+
   font-size: 15px;
 }
 
-.newsletter-form button {
-  background: #4f46e5;
-  color: #ffffff;
-  border: none;
-  padding: 14px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
+.newsletter-form input::placeholder {
+  color: #888888;
 }
 
-@media (max-width: 600px) {
+.newsletter-form input:focus {
+  outline: none;
+  border-color: #f5d76e;
+  box-shadow: 0 0 0 2px rgba(245, 215, 110, 0.25);
+}
+
+/* BUTTON */
+.newsletter-form button {
+  padding: 16px 30px;
+  border-radius: 14px;
+  border: none;
+
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000000;
+
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.45);
+  transition: transform 0.25s ease;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-1px);
+}
+
+/* FOOT NOTE */
+.newsletter-note {
+  display: block;
+  margin-top: 18px;
+  font-size: 13px;
+  color: #999999;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
   .newsletter-form {
     flex-direction: column;
+  }
+
+  .newsletter-box {
+    padding: 46px 28px;
+  }
+
+  .newsletter-box h2 {
+    font-size: 32px;
   }
 }

@@ -33,7 +33,7 @@ export default function Navbar() {
       {/* RIGHT: ACTIONS */}
       <div className="nav-right">
         <button onClick={onLogout} className="nav-logout">
-          Logout
+          ⏻ Logout
         </button>
 
         {user && (

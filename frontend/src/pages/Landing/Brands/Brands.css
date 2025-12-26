@@ -1,23 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap");
+
+/* ================= BRANDS SECTION ================= */
 .brands {
-  padding: 60px 6%;
+  position: relative;
+  padding: 140px 6% 160px;
+  background: #0a0a0a;
+  overflow: hidden;
   text-align: center;
-  background: #ffffff;
 }
 
-.brands p {
+/* BACKGROUND IMAGE */
+.brands-bg {
+  position: absolute;
+  inset: -20% 0;
+  background-image: url("/cube.jpg");
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.28;               /* 🔥 reduced harshness */
+  will-change: transform;
+  z-index: 0;
+}
+
+/* DARK + GOLD OVERLAY */
+.brands::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(245, 215, 110, 0.12),
+      transparent 55%
+    ),
+    linear-gradient(
+      rgba(10, 10, 10, 0.75),
+      rgba(5, 5, 5, 0.9)
+    );
+  z-index: 1;
+}
+
+/* GOLD DIVIDER */
+.section-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1.5px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(245, 215, 110, 0.9),
+    transparent
+  );
+
+  box-shadow:
+    0 0 10px rgba(245, 215, 110, 0.5),
+    0 0 22px rgba(245, 215, 110, 0.35);
+
+  z-index: 3;
+}
+
+/* CONTENT */
+.brands-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* STAT */
+.brands-stat span {
+  font-family: "Clash Display", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #f5d76e;
+}
+
+.brands-stat p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #e7c96b;
+  letter-spacing: 1px;
+}
+
+/* TITLE */
+.brands-title {
+  margin: 48px 0 60px;
   font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 32px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #dddddd;
 }
 
+.brands-title span {
+  color: #f5d76e;
+  font-weight: 600;
+}
+
+/* LOGOS */
 .brands-row {
   display: flex;
   justify-content: center;
-  gap: 48px;
+  align-items: center;
+  gap: 64px;
   flex-wrap: wrap;
 }
 
-.brands-row img {
-  height: 28px;
-  opacity: 0.7;
+.brand-logo {
+  height: 78px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+ 
+}
+
+.brand-logo.visible {
+  opacity: 0.9;
+  transform: translateY(0);
+}
+
+.brand-logo:hover {
+  opacity: 1;
+  
+  transform: translateY(-10px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .brands-row {
+    gap: 40px;
+  }
+
+  .brand-logo {
+    height: 64px;
+  }
 }
