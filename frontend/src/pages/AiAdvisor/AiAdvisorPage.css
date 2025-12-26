@@ -1,0 +1,250 @@
+/* PAGE */
+.ai-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  padding: 24px 28px;
+  gap: 16px;
+}
+
+/* HEADER */
+.ai-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ai-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+/* CHAT CONTAINER */
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 22px;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 24, 24, 0.95),
+    rgba(10, 10, 10, 0.95)
+  );
+  backdrop-filter: blur(16px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 215, 120, 0.12),
+    0 24px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* EMPTY STATE */
+.chat-empty {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.chat-empty ul {
+  margin-top: 10px;
+  padding-left: 16px;
+}
+
+.chat-empty li {
+  margin-bottom: 6px;
+}
+
+/* CHAT BLOCK */
+.chat-block {
+  margin-bottom: 22px;
+}
+
+/* MESSAGE WRAPPER */
+.chat-message {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.chat-message.ai {
+  justify-content: flex-start;
+}
+
+/* BUBBLES */
+.chat-bubble {
+  max-width: 70%;
+  padding: 14px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* USER */
+.chat-message.user .chat-bubble {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #fff;
+}
+
+/* AI */
+.chat-message.ai .chat-bubble {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #eaeaea;
+}
+
+/* ERROR */
+.ai-error {
+  font-size: 13px;
+  color: #ff8a8a;
+  padding-left: 6px;
+}
+
+/* INPUT BAR */
+.chat-input-bar {
+  display: flex;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.chat-input-bar textarea {
+  flex: 1;
+  resize: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 215, 120, 0.25);
+  border-radius: 16px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.chat-input-bar textarea:focus {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3);
+}
+
+.chat-input-bar button {
+  padding: 0 18px;
+}
+
+/* PREVIOUS CHATS */
+.previous-chats {
+  margin-top: 8px;
+}
+
+.previous-toggle {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chevron {
+  transition: transform 0.25s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.previous-list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.previous-card {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 215, 120, 0.25);
+
+  color: #fff;                 /* 🔥 FORCE TEXT VISIBILITY */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+.previous-q {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.previous-a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.chat-message.ai .chat-bubble {
+  font-size: 14px;
+}
+
+.chat-message.ai .chat-bubble h3 {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.chat-message.ai .chat-bubble ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.chat-message.ai .chat-bubble li {
+  margin-bottom: 4px;
+}
+
+/* ===== AI PAGE TITLE ===== */
+.ai-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+/* Gradient "AI" */
+.ai-title-gradient {
+  background: linear-gradient(
+    135deg,
+    #f5d76e,
+    #d4af37
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Normal text */
+.ai-title-text {
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+/* Subtle underline accent */
+.ai-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.9),
+    rgba(212, 175, 55, 0.2)
+  );
+  border-radius: 2px;
+}
