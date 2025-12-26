@@ -1,0 +1,163 @@
+/* ===== PAGE WRAPPER ===== */
+
+.invest-page {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 28px;
+  gap: 20px;
+}
+
+/* ===== HEADER ===== */
+
+.investment-header {
+  margin-bottom: 14px;
+}
+
+/* ===== TITLE ===== */
+
+.invest-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.invest-title-gradient {
+  background: linear-gradient(135deg, #f5d76e, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.invest-title-text {
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.invest-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.9),
+    rgba(212, 175, 55, 0.2)
+  );
+  border-radius: 2px;
+}
+
+.invest-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 6px;
+}
+
+/* ===== LIVE ROW ===== */
+
+.invest-live-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #3bd16f;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(59, 209, 111, 0.8);
+}
+
+/* ===== REFRESH BUTTON ===== */
+
+.refresh-btn {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: #d4af37;
+  padding: 6px 16px;
+  border-radius: 18px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.refresh-btn:hover {
+  background: rgba(212, 175, 55, 0.15);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== GRID ===== */
+
+.invest-grid {
+  display: grid;
+}
+
+.primary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 26px;
+}
+
+/* ===== CARDS ===== */
+
+.invest-card {
+  background: linear-gradient(
+    180deg,
+    rgba(24, 24, 24, 0.95),
+    rgba(10, 10, 10, 0.95)
+  );
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 215, 120, 0.12),
+    0 24px 60px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.invest-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(212, 175, 55, 0.15);
+}
+
+/* ===== TRENDS ===== */
+
+.trend-up {
+  color: #3bd16f;
+  font-weight: 600;
+}
+
+.trend-down {
+  color: #ff5c5c;
+  font-weight: 600;
+}
+
+.gold-price {
+  color: #f5d76e;
+  font-weight: 600;
+}
+
+/* ===== LOADING ===== */
+
+.loading-text {
+  color: #d4af37;
+  font-size: 15px;
+}

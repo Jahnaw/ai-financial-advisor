@@ -12,9 +12,11 @@ const authRoutes = require("./routes/authRoutes");
 const expenseRoutes = require("./routes/expenseRoutes");
 const goalRoutes = require("./routes/goalRoutes");
 const aiRoutes = require("./routes/aiRoutes");
+const marketRoutes = require("./routes/marketRoutes");
 
 const app = express();
 connectDB();
+require("./cron/marketCron");
 
 app.use(
   helmet({
@@ -49,6 +51,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/expenses", expenseRoutes);
 app.use("/api/goals", goalRoutes);
 app.use("/api/ai", aiRoutes);
+app.use("/api/market", marketRoutes);
 
 // Health check
 app.get("/", (req, res) =>

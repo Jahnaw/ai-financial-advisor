@@ -2,7 +2,7 @@ import React from "react";
 
 export default function InvestmentCard({ data }){
   return (
-    <div className="investment-card">
+    <div className="investment-card invest-card">
       <h4>{data.title}</h4>
       <p><strong>Risk:</strong> {data.risk}</p>
       <p><strong>Duration:</strong> {data.duration}</p>
