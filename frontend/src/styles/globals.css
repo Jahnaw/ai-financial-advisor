@@ -22,16 +22,16 @@ a {
   color: var(--gold);
   text-decoration: none;
 }
-.nav {
+/* .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 20px;
   background: transparent;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
-}
+} */
 .brand {
   font-weight: 700;
   color: var(--gold);
@@ -71,47 +71,14 @@ a {
 }
 .main-area {
   display: flex;
-  /*gap: 18px;*/
-  /* padding: 20px; */
+ 
 }
-/* .sidebar {
-  width: 220px;
-  background: linear-gradient(
-    180deg,
-    rgba(18, 18, 18, 0.92),
-    rgba(8, 8, 8, 0.92)
-  );
 
-  backdrop-filter: blur(18px);
-
-  box-shadow:
-  8px 0 24px rgba(0, 0, 0, 0.85),
-  inset -1px 0 0 rgba(245, 215, 110, 0.06);
-
-  padding: 16px 14px 20px;
-
-  border-radius: 0px;
-  height: calc(100vh - 80px);
-  position: sticky;
-  top: 70px;
-}
-.side-link {
-  display: block;
-  position: relative;
-  padding: 10px;
-  border-radius: 8px;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-.side-link.active {
-  background: rgba(212, 175, 55, 0.08);
-  color: var(--gold);
-  font-weight: 600;
-} */
 .content {
   flex: 1;
   background: transparent;
-  margin-left: 240px;
+  margin-left: 190px;
+  padding: 55px;
 }
 .landing {
   padding: 60px 40px;
@@ -218,17 +185,7 @@ a {
   gap: 12px;
   margin-top: 12px;
 }
-/* .health-card {
-  background: linear-gradient(180deg, #0a0a0a, #0e0e0e);
-  padding: 16px;
-  border-radius: 10px;
-  border-left: 4px solid var(--gold);
-}
-.health-card .score {
-  font-size: 30px;
-  color: var(--gold);
-  font-weight: 700;
-} */
+
 .alerts {
   margin-top: 16px;
 }
@@ -273,17 +230,7 @@ a {
   padding: 16px;
   border-radius: 10px;
 }
-/* .invest-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-}
-.investment-card {
-  background: var(--card);
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 215, 102, 0.04);
-} */
+
 .chat {
   background: #0d0d0d;
   padding: 12px;
