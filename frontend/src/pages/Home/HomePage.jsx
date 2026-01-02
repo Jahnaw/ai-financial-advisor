@@ -56,7 +56,7 @@ export default function HomePage() {
 
           <div className="hero-balance">
             <span>Total Balance</span>
-            <strong>₹{stats.savings - stats.totalExpenses}</strong>
+            <strong>₹{stats.income - stats.totalExpenses}</strong>
           </div>
 
           <div className="hero-actions">

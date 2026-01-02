@@ -117,3 +117,58 @@
 .dot.green {
   background: #2ecc71;
 }
+
+@media (max-width: 992px) {
+  .health-card {
+    margin-right: 0; 
+  }
+
+  .health-balance {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .health-top {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .health-range {
+    align-self: flex-start;
+  }
+
+  .health-graph {
+    height: 160px; 
+  }
+
+  .health-footer {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .health-card {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .health-balance {
+    font-size: 22px;
+  }
+
+  .health-range button {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .health-graph {
+    height: 140px;
+    border-radius: 14px;
+  }
+
+  .health-footer {
+    font-size: 11px;
+  }
+}
